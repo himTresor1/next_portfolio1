@@ -7,9 +7,17 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Snowfall from "react-snowfall";
+import TagManager , {TagManagerArgs} from "react-gtm-module"
 
 
 export default function App({ Component, pageProps }: AppProps) {
+   const gtmId = process.env. NEXT_PUBLIC_GTM_ID  || ""  ;
+    const  tagManagerArgs :  TagManagerArgs = {
+      gtmId,
+    };
+    useEffect(()=>{
+            TagManager.initialize(tagManagerArgs);
+    }, []);
   const [snow, setSnow] = useState(false);
   const [show, setShow] = useState(false);
   useEffect(() => {
