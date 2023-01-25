@@ -7,7 +7,6 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Snowfall from "react-snowfall";
-import import { initializeGtm } from './gtm'
 
 
 export default function App({ Component, pageProps }: AppProps) {
